@@ -4,7 +4,13 @@ This repos is containerize the Ethereum example. The Goal is quickly setup a pri
 Example in my Lab:
 [![asciicast](https://asciinema.org/a/lRWNbs4bQmmS6ijQcyjdLqvsS.png)](https://asciinema.org/a/lRWNbs4bQmmS6ijQcyjdLqvsS?speed=2)
 
-### Requirements
+Image build status
+
+|              | Solidity | Ethnetintel | Ethstats | Auto peer |
+|--------------|----------|-------------|----------|-----------|
+| Build Status |[![Docker Build Statu](https://img.shields.io/docker/build/kairen/solidity.svg)](https://hub.docker.com/r/kairen/solidity/)|[![Docker Build Statu](https://img.shields.io/docker/build/kairen/ethnetintel.svg)](https://hub.docker.com/r/kairen/ethnetintel/)|[![Docker Build Statu](https://img.shields.io/docker/build/kairen/ethstats.svg)](https://hub.docker.com/r/kairen/ethstats/)|[![Docker Build Statu](https://img.shields.io/docker/build/kairen/auto-peer.svg)](https://hub.docker.com/r/kairen/auto-peer/)|
+
+ Requirements
 * Docker engine.
 * Kubernetes cluster.
 
