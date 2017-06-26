@@ -1,8 +1,11 @@
+USER = kairen
+BUILD_IMAGES = auto-peer ethnetintel ethstats solidity
 GETH_IMAGE = ethereum/client-go
 DATA_DIR = genesis-data
 NETWORK_ID = 15
+BUILDING = echo "Building $(1) image ..."; cd $(1)/; docker build -t $(USER)/$(1) . ; cd ..
 
-.PHONY: all init run logs console clean rm
+.PHONY: all init run logs console clean rm build_images
 
 all: init
 
@@ -18,7 +21,7 @@ init:
 			--datadir=/$(DATA_DIR) /$(DATA_DIR)/genesis.json
 
 run_node:
-	@echo "Run node ..."
+	@echo "Run geth node ..."
 	docker run \
 	    -d \
 	    -p 8545:8545 \
@@ -48,3 +51,6 @@ clean:
 rm:
 	@echo "Remove genesis data ..."
 	rm -rf $(DATA_DIR)
+
+build_images:
+	for image in $(BUILD_IMAGES); do $(call building,$$image); done
