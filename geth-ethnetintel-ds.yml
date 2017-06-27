@@ -40,6 +40,23 @@ spec:
             port: 8545
           initialDelaySeconds: 15
           timeoutSeconds: 5
+      - name: geth-ethnetintel
+        image: kairen/ethnetintel
+        env:
+        - name: NAME_PREFIX
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: WS_SERVER
+          value: "ethstats-dashboard.default.svc.cluster.local:3000"
+        - name: WS_SECRET
+          value: "12qw34er"
+        - name: RPC_HOST
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: RPC_PORT
+          value: "8545"
       - name: geth-auto-peer
         image: kairen/auto-peer
         env:
