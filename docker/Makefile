@@ -50,7 +50,7 @@ clean:
 
 rm:
 	@echo "Remove genesis data ..."
-	rm -rf $(DATA_DIR)
+	sudo rm -rf $(DATA_DIR)
 
 build_images:
 	for image in $(BUILD_IMAGES); do $(call BUILDING,$$image); done
