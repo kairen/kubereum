@@ -1,0 +1,18 @@
+---
+sudo: required
+dist: xenial
+
+services:
+  - docker
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y install make
+
+script:
+  - cd docker/
+  - make build_images
+
+branches:
+  only:
+    - master
