@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/kairen/kubereum.svg?branch=master)](https://travis-ci.org/kairen/kubereum)
 # Kubernetes + Ethereum = Kubereum
 This repos is containerize the Ethereum example. The Goal is quickly setup a private Ethereum blockchain using Docker and Kubernetes.
 

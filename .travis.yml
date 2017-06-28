@@ -11,6 +11,10 @@ before_install:
 
 script:
   - cd docker/
+  - make init
+  - make run_node
+  - make clean
+  - make rm
   - make build_images
 
 branches:

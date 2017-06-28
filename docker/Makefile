@@ -53,4 +53,4 @@ rm:
 	rm -rf $(DATA_DIR)
 
 build_images:
-	for image in $(BUILD_IMAGES); do $(call building,$$image); done
+	for image in $(BUILD_IMAGES); do $(call BUILDING,$$image); done
