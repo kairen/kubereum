@@ -22,9 +22,9 @@ Example in my Lab:
 * Kubernetes cluster.
 
 ## Usage
-To run the Ethereum private chain cluster:
+To run the Ethereum private chain cluster(without the Ethereum network status):
 ```sh
-$ kubectl create \
+$ kubectl apply \
 -f geth-config.yml \
 -f geth-svc.yml \
 -f geth-ds.yml
