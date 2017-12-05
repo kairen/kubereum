@@ -65,10 +65,11 @@ class EthereumPeer():
     def encodes(self):
         try:
             encodes = []
+            headers = {'Content-Type': 'application/json'}
             payload = self.__payload("admin_nodeInfo", [])
             for host in self.nodes['nodes']:
                 url = "http://{}:{}".format(host, self.port)
-                response = requests.post(url, data=payload)
+                response = requests.post(url, headers=headers, data=payload)
                 encodes.append(response.json()['result']['enode'].replace('[::]', host))
             return encodes
         except Exception as e:
@@ -76,10 +77,11 @@ class EthereumPeer():
 
     def connectivity(self, encodes):
         try:
+            headers = {'Content-Type': 'application/json'}
             url = "http://{}:{}".format(self.nodes['master'], self.port)
             for ec in encodes:
                 payload = self.__payload("admin_addPeer", [ec])
-                response = requests.post(url, data=payload)
+                response = requests.post(url, headers=headers, data=payload)
                 print(response.json())
         except Exception as e:
             print(e)
