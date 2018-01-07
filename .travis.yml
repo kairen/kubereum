@@ -5,10 +5,6 @@ dist: xenial
 services:
   - docker
 
-before_install:
-  - sudo apt-get update
-  - sudo apt-get -y install make
-
 script:
   - cd docker/
   - make init
@@ -16,7 +12,3 @@ script:
   - make clean
   - make rm
   - make build_images
-
-branches:
-  only:
-    - master
